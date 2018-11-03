@@ -1,0 +1,20 @@
+Fetch all of the archive:
+scp -r freefall:/local/mail/archive/*/freebsd-snapshots .
+
+XXX - don't use the following, doesn't decode body properly
+Explode the mbox to files:
+cat 201810* freebsd-snapshots | split -p '^From ' - snap.
+The stdin trick is needed so the numbering/lettering continues properly.
+
+Correct way to split the bodies off.
+python splitbody.py arch/complete.txt arch/snap.
+
+Expand all the "validly" formed messages to a file:
+zcat $(zgrep -l 'PGP SIGNED MESSAGE' *) > ../complete.txt
+
+We only lose 2012, so no big deal.
+
+Bulk import:
+for i in snap.??; do sh addinfo.sh -m < $i; done
+
+-m is used to not check if they exist till the end.
