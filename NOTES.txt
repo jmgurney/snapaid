@@ -1,6 +1,11 @@
 Fetch all of the archive:
 scp -r freefall:/local/mail/archive/*/freebsd-snapshots .
 
+Expand all the "validly" formed messages to a file:
+zcat $(zgrep -l 'PGP SIGNED MESSAGE' *) > ../complete.txt
+
+We only lose 2012, and we'll loose everything before 2015 later.
+
 XXX - don't use the following, doesn't decode body properly
 Explode the mbox to files:
 cat 201810* freebsd-snapshots | split -p '^From ' - snap.
@@ -9,12 +14,11 @@ The stdin trick is needed so the numbering/lettering continues properly.
 Correct way to split the bodies off.
 python splitbody.py arch/complete.txt arch/snap.
 
-Expand all the "validly" formed messages to a file:
-zcat $(zgrep -l 'PGP SIGNED MESSAGE' *) > ../complete.txt
+Bulk import, -m is used to not check if they exist till the end:
+for i in arch/snap.????; do sh addinfo.sh -m $i; done
 
-We only lose 2012, so no big deal.
+Clean things up and skip checking for ones before given date
+sh addinfo.sh -c 20180900
 
-Bulk import:
-for i in snap.??; do sh addinfo.sh -m < $i; done
-
--m is used to not check if they exist till the end.
+Copy them up to freefall:
+scp snapshot.* freefall:public_html/FreeBSD-snap

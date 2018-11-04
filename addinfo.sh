@@ -2,14 +2,28 @@
 
 set -e
 
-args=`getopt m $*`
+usage() {
+	echo 'Usage: $0 [ -m ] <file>'
+	echo 'Usage: $0 -c <date>'
+	echo ''
+	echo 'date is specified as YYYYMMDD'
+
+	if [ x"$1" != x"" ]; then
+		exit $1
+	fi
+}
+
+args=`getopt cm $*`
 if [ $? -ne 0 ]; then
-	echo 'Usage: $0 [ -m ]'
-	exit 2
+	usage 2
 fi
 set -- $args
 while :; do
 	case "$1" in
+	-c)
+		complete=1
+		shift
+		;;
 	-m)
 		more=1
 		shift
@@ -19,8 +33,30 @@ while :; do
 		;;
 	esac
 done
+if [ x"$complete" = x"1" -a x"$more" = x"1" ]; then
+	echo '-m and -c cannot be specified at the same time.'
+	usage 2
+elif [ x"$complete" = x"1" -a $# -ne 1 ]; then
+	echo 'must only specify a date with -c'
+	usage 2
+elif [ x"$complete" != x"1" -a $# -ne 1 ]; then
+	echo 'must specify exactly one file'
+	usage 2
+fi
 
 mkdir "$0.running"
+
+if [ x"$complete" = x"1" ]; then
+	sort -u snapshot.complete.idx | xz > snapshot.complete.idx.xz
+	awk '$5 >= "'"$1"'" { 
+			if (!system("wget --method=HEAD " $9))
+				print
+		}
+		' snapshot.idx | sort -u | xz > snapshot.idx.xz
+	rm snapshot.idx snapshot.complete.idx
+	rmdir "$0.running"
+	exit 0
+fi
 
 # minimize file
 tmpfname="tmp.snapinf.asc"
@@ -40,7 +76,7 @@ awk '
 
 	$0 == "-----END PGP SIGNATURE-----" {
 		output = 0
-	}' > "$tmpfname"
+	}' "$1" > "$tmpfname"
 
 if ! gpg --verify "$tmpfname"; then
 	echo 'failed verify'
