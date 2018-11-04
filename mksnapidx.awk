@@ -86,5 +86,14 @@ $1 == "SHA512" {
 	} else
 		url = root parts[2] "/" fname
 
+	# if this part doesn't begin w/ r (for svn rev), skip it, we can't parse
+	# others for now
+	if (substr(parts[nextidx], 1, 1) != "r")
+		next
+
+	# double check that date is valid, if not, skip it
+	if (!isdate(date))
+		next
+
 	printf("%s %s %s %s %s %s %s %s %s %s\n", type, parts[2] "-" parts[3], arch, platform, date, parts[nextidx], vers, fname, url, MID)
 }
