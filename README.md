@@ -8,8 +8,20 @@ file.
 
 ![Screen shot of snapaid.sh find](images/snapaid.find.png?raw=true)
 
+Quick Start
+-------------
+
 The only file needed for this is the snapaid.sh script.  The other files
 are used for generating the index.
+
+```
+$wget https://raw.githubusercontent.com/jmgurney/snapaid/master/snapaid.sh
+$chmod 755 snapaid.sh
+$./snapaid.sh find
+```
+
+Notes
+-----
 
 This repository will be signed by my FreeBSD GPG key.  It is available
 at: [https://www.freebsd.org/doc/en_US.ISO8859-1/articles/pgpkeys/pgpkeys-developers.html]
