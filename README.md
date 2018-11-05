@@ -9,6 +9,15 @@ file.
 The only file needed for this is the snapaid.sh script.  The other files
 are used for generating the index.
 
+This repository will be signed by my FreeBSD GPG key.  It is available
+at: [https://www.freebsd.org/doc/en_US.ISO8859-1/articles/pgpkeys/pgpkeys-developers.html]
+
+You will *NOT* see the verified tag on github, because if I upload my key
+to github, github will mark edits done on the website as verified even
+though it was not authenticated by my GPG key.  This destroys the point
+of signing commits, as anyone who is able to take over my github account
+and not my GPG key, could now impersonate me, and make malicious changes.
+
 NOTE: The xz vs non-xz versions of some of the images are not able to be
 differentiated.  Currently shorting rules should always put the xz version
 before the non-xz version.
