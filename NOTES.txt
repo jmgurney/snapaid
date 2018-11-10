@@ -22,3 +22,5 @@ sh addinfo.sh -c 20180900
 
 Copy them up to freefall:
 scp snapshot.* freefall:public_html/FreeBSD-snap
+
+(cd ~; tar -cf - public_html/FreeBSD-snap/*) | ssh gold tar -xf -
