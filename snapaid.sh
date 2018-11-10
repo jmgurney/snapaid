@@ -255,8 +255,12 @@ dlverify() {
 		return 1
 	fi
 
-	# fetch link
-	$WGET -- "$dlurl"
+	if ! [ -f $(basename "$dlurl") ]; then
+		# fetch link
+		$WGET -- "$dlurl"
+	else
+		echo 'Image already exists, verifying...'
+	fi
 
 	if ! verifyfile "$vermid" "$fname"; then
 		echo 'Removing bad file.'
