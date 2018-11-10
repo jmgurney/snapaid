@@ -310,7 +310,7 @@ elif [ x"$1" = x"find" ]; then
 
 	tmpdir=$(mktemp -d -t snapaid)
 
-	trap "rm -rf $tmpdir" 0
+	trap "rm -r $tmpdir" 0
 
 	( cd "$tmpdir";
 	xzcat "$STOREDIR"/snapshot.idx.xz | sort -r -k 5 > selection;
@@ -379,7 +379,7 @@ elif [ x"$1" = x"test" ]; then
 	# Setup test environment
 	tmpdir=$(mktemp -d -t snapaid)
 
-	trap "rm -rf $tmpdir" 0
+	trap "rm -r $tmpdir" 0
 
 	cd "$tmpdir"
 
