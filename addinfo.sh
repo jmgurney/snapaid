@@ -30,8 +30,8 @@
 set -e
 
 usage() {
-	echo 'Usage: $0 [ -m ] <file>'
-	echo 'Usage: $0 -c <date>'
+	echo "Usage: $0 [ -m ] <file>"
+	echo "Usage: $0 -c <date>"
 	echo ''
 	echo 'date is specified as YYYYMMDD'
 
