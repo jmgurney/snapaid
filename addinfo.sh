@@ -33,6 +33,12 @@ usage() {
 	echo "Usage: $0 [ -m ] <file>"
 	echo "Usage: $0 -c <date>"
 	echo ''
+	echo 'Options:'
+	echo '	-m  Do not check what files are available.  This is useful for'
+	echo '	    bulk import.'
+	echo '	-c  Complete a bulk import (previously using -m), and assume that'
+	echo '	    any snapshots before specified data are unfetchable.'
+	echo ''
 	echo 'date is specified as YYYYMMDD'
 
 	if [ x"$1" != x"" ]; then
