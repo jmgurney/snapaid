@@ -55,4 +55,4 @@ index.  The message-id of the email is in the index so that the frontend
 can d/l the original email, verify the GPG signature locally.  The
 complete index is used for verifying a snapshot that has already been
 downloaded.  Another index is also maintained which only contains the
-currently available to d/l snapshots.
+currently available to d/l snapshots. 
