@@ -77,7 +77,9 @@ elif [ x"$complete" != x"1" -a $# -ne 1 ]; then
 	usage 2
 fi
 
-mkdir "$0.running"
+while ! mkdir "$0.running"; do
+	sleep 1;
+done
 
 if [ x"$complete" = x"1" ]; then
 	sort -u snapshot.complete.idx | xz > snapshot.complete.idx.xz
@@ -147,6 +149,7 @@ if [ x"$more" = x"1" ]; then
 	mv snapshot.idx.new snapshot.idx
 	mv snapshot.complete.idx.new snapshot.complete.idx
 else
+	chmod 644 snapshot.idx.new.xz snapshot.complete.idx.new.xz
 	mv snapshot.idx.new.xz snapshot.idx.xz
 	mv snapshot.complete.idx.new.xz snapshot.complete.idx.xz
 fi
