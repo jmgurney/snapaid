@@ -33,12 +33,13 @@ of signing commits, as anyone who is able to take over my github account
 and not my GPG key, could now impersonate me, and make malicious changes.
 
 NOTE: The xz vs non-xz versions of some of the images are not able to be
-differentiated.  Currently shorting rules should always put the xz version
+differentiated.  Currently sorting rules should always put the xz version
 before the non-xz version.
 
 NOTE: Only snapshots that have SHA512 hashes are included.  This excludes
 most snapshots from 2015 and before.  The tool could be updated to include
-SHA256, but not a priority currently.
+SHA256, but not a priority currently, and most/all are not available for
+download.
 
 NOTE: Not all of the snapshots are in the database.  Some snapshot names,
 like 11.0-RC1, don't contain all the info others do, and are not
