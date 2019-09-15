@@ -57,6 +57,7 @@ fi
 # -N for timestamps
 # --backups=x for backing up
 hostname=people.FreeBSD.org
+hostname=www.funkthat.com
 completeurl="https://${hostname}/~jmg/FreeBSD-snap/snapshot.complete.idx.xz"
 currenturl="https://${hostname}/~jmg/FreeBSD-snap/snapshot.idx.xz"
 
@@ -478,7 +479,9 @@ elif [ x"$1" = x"test" ]; then
 
 	echo tests completed!!!
 else
-	echo "Unknown verb: $1"
+	if [ $# -gt 0 ]; then
+		echo "Unknown verb: $1"
+	fi
 	echo "Usage:"
 	echo "	$0 verify file ..."
 	echo "	$0 find"
