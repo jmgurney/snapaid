@@ -77,7 +77,10 @@ $1 == "SHA512" {
 	# make arch part, may include additional part
 	arch = parts[4]
 	basearch = arch
-	if (parts[4] == "arm" || (parts[4] == "powerpc" && parts[5] == "powerpcspe") || parts[4] == "arm64") {
+	if (parts[4] == "arm" ||
+	    (parts[4] == "powerpc" && parts[5] == "powerpcspe") ||
+	    (parts[4] == "powerpc" && parts[5] == "powerpc64") ||
+	    parts[4] == "arm64") {
 		# FreeBSD-11.3-STABLE-arm64-aarch64-20191011-r353406-memstick.img
 		basearch = parts[5]
 		arch = parts[4] "-" parts[5]
@@ -133,9 +136,10 @@ $1 == "SHA512" {
 		}
 	}
 	if (index(parts[3], "BETA") == 1 || index(parts[3], "RC") == 1) {
-		if (type == "vm")
+		if (type == "vm") {
+			vers = dotparts[3]
 			url = relvmroot parts[2] "-" parts[3] "/" basearch "/Latest/" fname
-		else
+		} else
 			url = relisoroot parts[2] "/" fname
 	} else {
 		if (type == "vm") {

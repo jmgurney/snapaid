@@ -83,7 +83,7 @@ done
 
 if [ x"$complete" = x"1" ]; then
 	sort -u snapshot.complete.idx | xz > snapshot.complete.idx.xz
-	awk '$5 >= "'"$1"'" { 
+	awk '$5 == "xxx" || $5 >= "'"$1"'" {
 			if (!system("wget --method=HEAD " $9))
 				print
 		}
