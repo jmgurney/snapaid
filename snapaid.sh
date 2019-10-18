@@ -28,7 +28,7 @@
 #
 
 STOREDIR="$HOME/.snapaid"
-KEYS="0x524F0C37A0B946A3"
+KEYS="78B342BA26C7B2AC681EA7BE524F0C37A0B946A3"
 KEY_URLS='https://svnweb.freebsd.org/doc/head/share/pgpkeys/gjb.key?view=co'
 
 setdefaults() {
@@ -280,7 +280,9 @@ if ! check_keys; then
 		echo "$i"
 	done
 	echo ""
-	echo "and imported into GPG w/ the --import option."
+	echo "and imported into GPG w/ the --import option.  This can be"
+	echo "done via the command:"
+	echo "fetch -o - $KEY_URLS | gpg --import -"
 	echo ""
 	echo "For extra security, additional verification should be done, such"
 	echo "as manually verifying finger prints."
