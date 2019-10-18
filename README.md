@@ -24,7 +24,7 @@ Notes
 -----
 
 This repository will be signed by my FreeBSD GPG key.  It is available
-at: [https://www.freebsd.org/doc/en_US.ISO8859-1/articles/pgpkeys/pgpkeys-developers.html]
+at: https://www.freebsd.org/doc/en_US.ISO8859-1/articles/pgpkeys/pgpkeys-developers.html#pgpkey-jmg
 
 You will *NOT* see the verified tag on github, because if I upload my key
 to github, github will mark edits done on the website as verified even
