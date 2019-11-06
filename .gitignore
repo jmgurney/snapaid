@@ -1,2 +1,3 @@
 arch
 snapshot.*
+fixtures/*.test.out

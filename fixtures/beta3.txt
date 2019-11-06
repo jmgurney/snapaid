@@ -1,0 +1,567 @@
+From owner-freebsd-snapshots@freebsd.org  Fri Oct  4 14:06:06 2019
+Return-Path: <owner-freebsd-snapshots@freebsd.org>
+Received: from mx2.freebsd.org (mx2.freebsd.org [96.47.72.81])
+	by gold.funkthat.com (8.15.2/8.15.2) with ESMTPS id x94L65xV023324
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
+	for <jmg@funkthat.com>; Fri, 4 Oct 2019 14:06:06 -0700 (PDT)
+	(envelope-from owner-freebsd-snapshots@freebsd.org)
+Received: from mx1.freebsd.org (mx1.freebsd.org [96.47.72.80])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(Client CN "mx1.freebsd.org", Issuer "Let's Encrypt Authority X3" (verified OK))
+	by mx2.freebsd.org (Postfix) with ESMTPS id 9D342966AF;
+	Fri,  4 Oct 2019 21:06:04 +0000 (UTC)
+	(envelope-from owner-freebsd-snapshots@freebsd.org)
+Received: from mailman.nyi.freebsd.org (mailman.nyi.freebsd.org [IPv6:2610:1c1:1:606c::50:13])
+	by mx1.freebsd.org (Postfix) with ESMTP id 46lMqH70Ntz3MMT;
+	Fri,  4 Oct 2019 21:06:03 +0000 (UTC)
+	(envelope-from owner-freebsd-snapshots@freebsd.org)
+Delivered-To: freebsd-snapshots@mailman.nyi.freebsd.org
+Received: from mx1.freebsd.org (mx1.freebsd.org [IPv6:2610:1c1:1:606c::19:1])
+ by mailman.nyi.freebsd.org (Postfix) with ESMTP id E4C35139486;
+ Fri,  4 Oct 2019 21:05:57 +0000 (UTC) (envelope-from gjb@freebsd.org)
+Received: from freefall.freebsd.org (freefall.freebsd.org [96.47.72.132])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ (Client CN "freefall.freebsd.org",
+ Issuer "Let's Encrypt Authority X3" (verified OK))
+ by mx1.freebsd.org (Postfix) with ESMTPS id 46lMq96FcCz3ML0;
+ Fri,  4 Oct 2019 21:05:57 +0000 (UTC) (envelope-from gjb@freebsd.org)
+Received: from FreeBSD.org (freefall.freebsd.org [IPv6:2610:1c1:1:6074::16:84])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ by freefall.freebsd.org (Postfix) with ESMTPS id 70E4FEDCE;
+ Fri,  4 Oct 2019 21:05:57 +0000 (UTC) (envelope-from gjb@freebsd.org)
+Date: Fri, 4 Oct 2019 21:05:55 +0000
+From: Glen Barber <gjb@freebsd.org>
+To: freebsd-stable@freebsd.org, freebsd-snapshots@freebsd.org
+Subject: FreeBSD 12.1-BETA3 Now Available
+Message-ID: <20191004210555.GM4030@FreeBSD.org>
+MIME-Version: 1.0
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-BeenThere: freebsd-snapshots@freebsd.org
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: FreeBSD Development Snapshot Announcements
+ <freebsd-snapshots.freebsd.org>
+List-Unsubscribe: <https://lists.freebsd.org/mailman/options/freebsd-snapshots>, 
+ <mailto:freebsd-snapshots-request@freebsd.org?subject=unsubscribe>
+List-Archive: <http://lists.freebsd.org/pipermail/freebsd-snapshots/>
+List-Help: <mailto:freebsd-snapshots-request@freebsd.org?subject=help>
+List-Subscribe: <https://lists.freebsd.org/mailman/listinfo/freebsd-snapshots>, 
+ <mailto:freebsd-snapshots-request@freebsd.org?subject=subscribe>
+Cc: FreeBSD Release Engineering Team <re@freebsd.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: owner-freebsd-snapshots@freebsd.org
+Sender: owner-freebsd-snapshots@freebsd.org
+X-Greylist: IP, sender and recipient auto-whitelisted, not delayed by milter-greylist-4.4.3 (gold.funkthat.com [192.168.0.2]); Fri, 04 Oct 2019 14:06:06 -0700 (PDT)
+Status: RO
+Content-Length: 35133
+Lines: 504
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+The third BETA build of the 12.1-RELEASE release cycle is now available.
+
+Installation images are available for:
+
+o 12.1-BETA3 amd64 GENERIC
+o 12.1-BETA3 i386 GENERIC
+o 12.1-BETA3 powerpc GENERIC
+o 12.1-BETA3 powerpc64 GENERIC64
+o 12.1-BETA3 powerpcspe MPC85XXSPE
+o 12.1-BETA3 sparc64 GENERIC
+o 12.1-BETA3 armv6 RPI-B
+o 12.1-BETA3 armv7 BANANAPI
+o 12.1-BETA3 armv7 BEAGLEBONE
+o 12.1-BETA3 armv7 CUBIEBOARD
+o 12.1-BETA3 armv7 CUBIEBOARD2
+o 12.1-BETA3 armv7 CUBOX-HUMMINGBOARD
+o 12.1-BETA3 armv7 RPI2
+o 12.1-BETA3 armv7 PANDABOARD
+o 12.1-BETA3 armv7 WANDBOARD
+o 12.1-BETA3 armv7 GENERICSD
+o 12.1-BETA3 aarch64 GENERIC
+o 12.1-BETA3 aarch64 RPI3
+o 12.1-BETA3 aarch64 PINE64
+o 12.1-BETA3 aarch64 PINE64-LTS
+
+Note regarding arm SD card images: For convenience for those without
+console access to the system, a freebsd user with a password of
+freebsd is available by default for ssh(1) access.  Additionally,
+the root user password is set to root.  It is strongly recommended
+to change the password for both users after gaining access to the
+system.
+
+Installer images and memory stick images are available here:
+
+    https://download.freebsd.org/ftp/releases/ISO-IMAGES/12.1/
+
+The image checksums follow at the end of this e-mail.
+
+If you notice problems you can report them through the Bugzilla PR
+system or on the -stable mailing list.
+
+If you would like to use SVN to do a source based update of an existing
+system, use the "releng/12.1" branch.
+
+A summary of changes since 12.1-BETA2 includes:
+
+o An issue with imx6-based arm boards had been fixed.
+
+o An issue with 64-bit long double types leading to link failures had
+  been fixed.
+
+o An overflow logic error had been fixed in fsck_msdosfs(8).
+
+o An issue in destruction of robust mutexes had been fixed.
+
+o Support for the '-vnP' flags to the zfs send subcommand had been
+  added for bookmarks.
+
+o The ixgbe(4) driver had been updated to prevent a potential system
+  crash with certain 10Gb Intel NICs.
+
+o A regression with the zfs send subcommand when using the '-n', '-P',
+  and '-i' flags had been fixed.
+
+o The freebsd-update(8) utility had been updated to include two new
+  subcommands, updatesready and showconfig.
+
+o Support for 'ps -H' had been added to kvm(3).
+
+o An issue when compiling certain ports targeting Intel Atom CPUs had
+  been fixed.
+
+o A use-after-free in SCTP had been fixed.
+
+o A regression that could lead to a system crash when using vmxnet3 had
+  been fixed.
+
+A list of changes since 12.0-RELEASE is available in the releng/12.1
+release notes:
+
+    https://www.freebsd.org/releases/12.1R/relnotes.html
+
+Please note, the release notes page is not yet complete, and will be
+updated on an ongoing basis as the 12.1-RELEASE cycle progresses.
+
+=== Virtual Machine Disk Images ===
+
+VM disk images are available for the amd64, i386, and aarch64
+architectures.  Disk images may be downloaded from the following URL
+(or any of the FreeBSD download mirrors):
+
+    https://download.freebsd.org/ftp/releases/VM-IMAGES/12.1-BETA3/
+
+The partition layout is:
+
+    ~ 16 kB - freebsd-boot GPT partition type (bootfs GPT label)
+    ~ 1 GB  - freebsd-swap GPT partition type (swapfs GPT label)
+    ~ 20 GB - freebsd-ufs GPT partition type (rootfs GPT label)
+
+The disk images are available in QCOW2, VHD, VMDK, and raw disk image
+formats.  The image download size is approximately 135 MB and 165 MB
+respectively (amd64/i386), decompressing to a 21 GB sparse image.
+
+Note regarding arm64/aarch64 virtual machine images: a modified QEMU EFI
+loader file is needed for qemu-system-aarch64 to be able to boot the
+virtual machine images.  See this page for more information:
+
+    https://wiki.freebsd.org/arm64/QEMU
+
+To boot the VM image, run:
+
+    % qemu-system-aarch64 -m 4096M -cpu cortex-a57 -M virt  \
+	-bios QEMU_EFI.fd -serial telnet::4444,server -nographic \
+	-drive if=none,file=VMDISK,id=hd0 \
+	-device virtio-blk-device,drive=hd0 \
+	-device virtio-net-device,netdev=net0 \
+	-netdev user,id=net0
+
+Be sure to replace "VMDISK" with the path to the virtual machine image.
+
+=== Amazon EC2 AMI Images ===
+
+FreeBSD/amd64 EC2 AMIs are available in the following regions:
+
+  eu-north-1 region: ami-07085de4e26071c9e
+  ap-south-1 region: ami-095bd806d8acfffb1
+  eu-west-3 region: ami-0314542b8d7579bdd
+  eu-west-2 region: ami-06ec921eb87ef4d7b
+  eu-west-1 region: ami-0f0051c800be4091e
+  ap-northeast-2 region: ami-0f109258a463177bb
+  ap-northeast-1 region: ami-0224a1cb8e19333b8
+  sa-east-1 region: ami-0536a86bff5f33356
+  ca-central-1 region: ami-06709921360dccfa3
+  ap-east-1 region: ami-0142af9336f6e529c
+  ap-southeast-1 region: ami-0c439e0bc0c567dd3
+  ap-southeast-2 region: ami-0fa770b7f07583b48
+  eu-central-1 region: ami-0dfca49cf2ba89c43
+  us-east-1 region: ami-06884b4e2e511590f
+  us-east-2 region: ami-06c687665309d8b17
+  us-west-1 region: ami-0dce597e8b07a6c6d
+  us-west-2 region: ami-0e1f5ccdd2221b1d6
+
+FreeBSD/aarch64 EC2 AMIs are available in the following regions:
+
+  eu-north-1 region: ami-0914805810f9fcca2
+  ap-south-1 region: ami-0862409434d8089f2
+  eu-west-3 region: ami-08e6dc501b060fa7c
+  eu-west-2 region: ami-000f2362fef121710
+  eu-west-1 region: ami-0c7a18e2b216a1b0c
+  ap-northeast-2 region: ami-047bc72d91ab47b95
+  ap-northeast-1 region: ami-082dcca6b9ac52f3f
+  sa-east-1 region: ami-0a9fd8ffffc889430
+  ca-central-1 region: ami-0d513e584801de3fa
+  ap-east-1 region: ami-089a6b231886f692f
+  ap-southeast-1 region: ami-09c6f305a761c8712
+  ap-southeast-2 region: ami-0ee5e02b85aecbef3
+  eu-central-1 region: ami-08321cbac28d28d71
+  us-east-1 region: ami-0a9c2fdd733536b50
+  us-east-2 region: ami-0a5b46f4260ed9ca5
+  us-west-1 region: ami-01aca4de517a623fe
+  us-west-2 region: ami-0ac8b561fb3597d89
+
+=== Vagrant Images ===
+
+FreeBSD/amd64 images are available on the Hashicorp Atlas site, and can
+be installed by running:
+
+    % vagrant init freebsd/FreeBSD-12.1-BETA3
+    % vagrant up
+
+=== Upgrading ===
+
+The freebsd-update(8) utility supports binary upgrades of amd64 and i386
+systems running earlier FreeBSD releases.  Systems running earlier
+FreeBSD releases can upgrade as follows:
+
+	# freebsd-update upgrade -r 12.1-BETA3
+
+During this process, freebsd-update(8) may ask the user to help by
+merging some configuration files or by confirming that the automatically
+performed merging was done correctly.
+
+	# freebsd-update install
+
+The system must be rebooted with the newly installed kernel before
+continuing.
+
+	# shutdown -r now
+
+After rebooting, freebsd-update needs to be run again to install the new
+userland components:
+
+	# freebsd-update install
+
+It is recommended to rebuild and install all applications if possible,
+especially if upgrading from an earlier FreeBSD release, for example,
+FreeBSD 11.x.  Alternatively, the user can install misc/compat11x and
+other compatibility libraries, afterwards the system must be rebooted
+into the new userland:
+
+	# shutdown -r now
+
+Finally, after rebooting, freebsd-update needs to be run again to remove
+stale files:
+
+	# freebsd-update install
+
+== ISO CHECKSUMS ==
+
+o 12.1-BETA3 amd64 GENERIC:
+  SHA512 (FreeBSD-12.1-BETA3-amd64-bootonly.iso) = 3ca05e8bd48ac420621b1cb86842de3f0ea157a3d1051bf43354726c41f4c5a29421dd48729d7ab00cc5939e0f795b66d138fdb05abf2a9cc8fb83d7e2f57749
+  SHA512 (FreeBSD-12.1-BETA3-amd64-bootonly.iso.xz) = 4a7ded42cc283565226848cd8cc7ef1b409de001297f5c5a55e48c62badf4af3be3cca2606bb1ceb1fd4188b11268bb2b8c7ada96d94ba235c3e766bcd2b1f6a
+  SHA512 (FreeBSD-12.1-BETA3-amd64-disc1.iso) = 71b413a52b0d8a4ad9fd9d0d1708fc9349b6d29d34ff15b9013b474de6a32034419c23bb30c0c1131d71957918d3f2fdd5d2825a01cf92b54a19af06fb4d2fc6
+  SHA512 (FreeBSD-12.1-BETA3-amd64-disc1.iso.xz) = 99db62096b415501cb186e83610f599bd3f36e02b7aac4c99658586c99441339892809f447e09a7256588b5b29fd3c1632626df59589c831548dff7877c463a0
+  SHA512 (FreeBSD-12.1-BETA3-amd64-dvd1.iso) = 2b36635c032ca7ca0396b74908e91f5a5ed9b1911dae42f87a611f3456ea9195bc6f0ef740703822bade4d61d8ee67fdb32f8d0ff81953e64d60a27f313a3444
+  SHA512 (FreeBSD-12.1-BETA3-amd64-dvd1.iso.xz) = 73610161093bce3a2c7951d3f5b6cce09b7fa8fdb4066515ff95efe99084c188d2899fe622793af5dc4ec0a5788e81ad8b515866b67ac3f9f8c0fd2c038476c3
+  SHA512 (FreeBSD-12.1-BETA3-amd64-memstick.img) = e3615ab92a5ec8fbd503b016ca5ef1af5d34de8021b8606e1e41a85abc60a42616cb74407d46ee665c6255d82d49441d3e976776c20e9bc0127525a57c98bc12
+  SHA512 (FreeBSD-12.1-BETA3-amd64-memstick.img.xz) = 0d7a384b1654ff7652b30c4b6a6d89dadbe59cbfe5c5b3f172420af134de19ff84f7e753a0d7b71019fa875a68fdaa0dc876046815e21bf666c93c19b24039aa
+  SHA512 (FreeBSD-12.1-BETA3-amd64-mini-memstick.img) = 6ca8e687b46b5b2f8e35fb81e2f3daf788c9bd1b469afd4aba19aa81573f6cd2f337f009092541cd827657ad99843d3043f9573ac53bd4d49b086a97ff60f185
+  SHA512 (FreeBSD-12.1-BETA3-amd64-mini-memstick.img.xz) = be9facc283071e753b007d0a4a13cd044a3db9c187bf83507fd116428a1773eeda36397ffd3477b559d5f4a1c848285722867120a5b08b958a1f1edce58cf406
+
+  SHA256 (FreeBSD-12.1-BETA3-amd64-bootonly.iso) = b0d796f23c33f411dbd0eeaf8f5787318ff9c794568ecb30836cfdbc9b5577a0
+  SHA256 (FreeBSD-12.1-BETA3-amd64-bootonly.iso.xz) = 8accc9060948c692b6845e2ae6a698f7adf1c5fb6f9a45a24f1049877dabf32d
+  SHA256 (FreeBSD-12.1-BETA3-amd64-disc1.iso) = 3e50474412efc961664d3cced6a24a1adb9f9fac9dca7c43c1034b5dbf62c9e6
+  SHA256 (FreeBSD-12.1-BETA3-amd64-disc1.iso.xz) = 6e82c48bff4a0001f111652dd9e79e46b76ab75b0329668e80ed5505e5e2b147
+  SHA256 (FreeBSD-12.1-BETA3-amd64-dvd1.iso) = 861951dd4b7afccccf50c574d74fc6a21eb0f9ce3dcbfc992bdffdaa418fc548
+  SHA256 (FreeBSD-12.1-BETA3-amd64-dvd1.iso.xz) = 12bc51f796554a00d3233a5313e77d0c6a7b787146d13782b97c424581ca9b8d
+  SHA256 (FreeBSD-12.1-BETA3-amd64-memstick.img) = a5320a4febc26429bb8bf81d3d3ae59b339014c7a7bf7d093cfa81319a887c47
+  SHA256 (FreeBSD-12.1-BETA3-amd64-memstick.img.xz) = ed2947dcaeed7d088d7df97ae97eaa3cf1e0f0ae6354bc0f57f017356e7adbbf
+  SHA256 (FreeBSD-12.1-BETA3-amd64-mini-memstick.img) = 79b63ce5af0d292903d00cc97fd58a4e25a4e8a20c0f830945ee8d3523909bd6
+  SHA256 (FreeBSD-12.1-BETA3-amd64-mini-memstick.img.xz) = ce3bf17c7339d6985d3cba543214fb441a77bcf77908006ac52790f143e96ff4
+
+
+o 12.1-BETA3 i386 GENERIC:
+  SHA512 (FreeBSD-12.1-BETA3-i386-bootonly.iso) = 3f72623e9e40934ba7d7bcc1bfd7c543f9369eaeeb649bdadba22f4ac628f9d7a341bfd31dfdc126629127cbd05d27443ed4481a8e8f122266b8b0f8e135771c
+  SHA512 (FreeBSD-12.1-BETA3-i386-bootonly.iso.xz) = 1e7641017b00f73e60368257c5ed04fdc686b1fb3df8ac6544f4b8ee72b8fd3cba97d7695f11dada2c1d71906106adbfde2f491152f84daac1f05e24a22b0575
+  SHA512 (FreeBSD-12.1-BETA3-i386-disc1.iso) = 76f0c3a1f8419c7bec8c93fe435e66fb41d66a242ff6ac94a17a94e977794a21179eecdddd85a0db62f85d94a2356309ab03b1bec55d6d355e8cf394977fbabd
+  SHA512 (FreeBSD-12.1-BETA3-i386-disc1.iso.xz) = 69957c30a44c676e46274565aae0eeaaf9f1cb4584476b139ddad2e0fb33d83b6da09c7a99bf7b596ab544e5ac02fed7aa9830e3bff67167342bbcfdbf118c9c
+  SHA512 (FreeBSD-12.1-BETA3-i386-dvd1.iso) = b6eee5fda39f2a774f0273bb895f6183157a51e35d755eb27f07c9b4179dd0990c20223139cbd6c5bb2e509c59b2d816057a8b0d8792077eb470bc9647e3e3f1
+  SHA512 (FreeBSD-12.1-BETA3-i386-dvd1.iso.xz) = 622f5ba0ab93c78151a59a03ebc75059ad14a4cb6cf131c6c1c68b7d797ca712b5a5bdca0ec6c496b62dae2fab5234da0bbfccd2de737908f171f654ee7a239a
+  SHA512 (FreeBSD-12.1-BETA3-i386-memstick.img) = 22b2a225020a4fcba13e6b2c4069adaa6352c92a4dfc96a1070d35084c2384b3a938aa3ed27e3daf449abf1e0a4713f88136080ab954b78783ee7720fca2098c
+  SHA512 (FreeBSD-12.1-BETA3-i386-memstick.img.xz) = 7d2831e20a800537659b0139d9c754e98410891c866296321d4ebfd444f4a4aa0bda6d4c87665744cec46909ff4f1c4a91c564f1a5cc7319be2cae4c5913688d
+  SHA512 (FreeBSD-12.1-BETA3-i386-mini-memstick.img) = 50b2eab8c72c632598cb6fb696dab0fc7c4fffdb566c9218fffd0a02ff9e279d4eae481c3af16aee6fa42f02fe15c2ce6b0856d42b74d998df396978de39616a
+  SHA512 (FreeBSD-12.1-BETA3-i386-mini-memstick.img.xz) = 38ebfaa7a86e6d11e85cbde373d2e732195aab81f1eef7826efa47bb7202a9a888444ea87ca7b077962e0017389abed7e344d52f2af4c67a3d2cd4437de6d684
+
+  SHA256 (FreeBSD-12.1-BETA3-i386-bootonly.iso) = 7b184295d78d78d1faedfb182e18ee089cc82260bf6d81ca0f9202a251d0cc1b
+  SHA256 (FreeBSD-12.1-BETA3-i386-bootonly.iso.xz) = a7bd02b0b513866626a0f89778d3ae77729bced260d0e0f5fed50a9f30f111bf
+  SHA256 (FreeBSD-12.1-BETA3-i386-disc1.iso) = e5025d61f51e88e732bd319ab7a2884390c0762e63792c43504b3e1557a6b5c1
+  SHA256 (FreeBSD-12.1-BETA3-i386-disc1.iso.xz) = 452fd4eccf1bc20cefa7cab6705ce91364b06633b22753a45a3231071798f818
+  SHA256 (FreeBSD-12.1-BETA3-i386-dvd1.iso) = f3c3654c307933018c6fb312f11f18cbf6f484c1ffbaf219c3e15c1ee4df54d7
+  SHA256 (FreeBSD-12.1-BETA3-i386-dvd1.iso.xz) = 1dc4cb2eb5f46adb55609d293b2d423cc9d22c10a393695751987ba18b432450
+  SHA256 (FreeBSD-12.1-BETA3-i386-memstick.img) = e6275d7b14eb92cc97de7944730fafa61644c724bc9d6104f3169adee278138f
+  SHA256 (FreeBSD-12.1-BETA3-i386-memstick.img.xz) = c30bd315f0691d8726093004f30404a614c87dfa6b97cad62784d95148fd2a34
+  SHA256 (FreeBSD-12.1-BETA3-i386-mini-memstick.img) = 65f86cf20aecd5059fbad9688c55dc0df96bf41c72ad160eb1ae496b4a03f418
+  SHA256 (FreeBSD-12.1-BETA3-i386-mini-memstick.img.xz) = 303ba32bc4cf4913956d0ec2d2d64a75be18fdac61fe00a17ee5979884aa791e
+
+
+o 12.1-BETA3 powerpc GENERIC:
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-bootonly.iso) = 826b2f5731764dfa0114291e2ed3f4b0d385938e767e8b92778fb258a45217e7578adb704dedd2b5d69ee5af86c527f637282d5542429502866ebe168b7c8b49
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-bootonly.iso.xz) = 84cb81c0c6dc54d86438be739731ad6db485875c7881bf80f4a83d9422bf7f88ae60ae340d3a9aeaf1be43d96d74c93e208c0b336cfcc88ade484c117f4f45dc
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-disc1.iso) = 48753d7fd757aed35e6fcec783df57694791aadfcda4000eb220665b232d66e27bbb88c602e99921af081b4770ae3cfeb4b9df821045c7db7b3cd76ed3064416
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-disc1.iso.xz) = 3f8b86fdc883c0a9f990577f15c28f89c6675c309283ff2908d1d9aec9bffe31fca8d1d6e8733f41bbb21ffec16461f9af15cddaa0be536059a17618a80fa240
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-dvd1.iso) = 0ee962613c4175ac0d30fa9a996ea886c891353192e17e053844c7db9f26b7e3175efaec40e781c6e382ea78b2eeace6179272153e4847f9b5528950bdcc6bfb
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-dvd1.iso.xz) = 083fbd6f024a4c170da6ff52165863514dd786d95490968dee21de39b65450afb00bf134c7510559b22832a2f69ad0d913b0b7a2b10a6e9a47e46a48bb028c38
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-memstick.img) = be289271d7f6da1ea189b316617349fddb38e42e4e9424b854fecd8db83ae0497ecf84ec2db505018c644b27a2d851acb8e81bd8071d5d442e75cef4e9343b36
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-memstick.img.xz) = bf6987498ccf61c99f9315eef2c9424fe104a77d864447ed8149c360f02a56feb0398a4779776aa5d1d19effb3e43ae5d0735adca565dabe3c12320ab7f8c3d5
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-mini-memstick.img) = 2033bc3dfbb33d99073e40920e15c0e1b5a580e5114e0598a2cadad9e9a207184b5f7903371383fb5e618f9b743e4704ae177318e6a166a76b559b83ab08fc09
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-mini-memstick.img.xz) = 4e400c9f6e5e61209bd2bcc0d00a2090c5d055c81c485656524dbde5ecdac94fa1ba85fe975247817ef8dc13da16a54f6b79e4e5ec463538fd2a60208e388466
+
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-bootonly.iso) = d5814bda886fab5101b70a751053f86f4090de21a1384e145967a922b156acbd
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-bootonly.iso.xz) = 6fdc8a4a83913d3b9d1ad76e6b159062126f6fa46924cfafc975e41fe3c4eb64
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-disc1.iso) = a9424007d65686038dde8103db86adcce410c8244f1bdd0dca2409290d786329
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-disc1.iso.xz) = 04bd2f794068525a1d9627767027667f9ce9a20254e591a25bed9bfd9ffb32e0
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-dvd1.iso) = f5a1be285c2c71ea4b5c15df955372c7a066ea764750e4076af3a3699b45937c
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-dvd1.iso.xz) = e525d25243fea1dc0a5048e5a1edbb8996e90a27cb8a83c4187b31ce7bfcb76c
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-memstick.img) = b8b54bebc767f5e5b6fa3956d0fa11b25c3ac343c867833de05d53b898138cd7
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-memstick.img.xz) = f992a86b981207c2a2ec6febbecbf9587488168f0da5a9964222881954c7aa1d
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-mini-memstick.img) = 363046b7f40381ab18db9975a222e2437d792a27fa79717389475588a9dff423
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-mini-memstick.img.xz) = 60fd85d15c07676ca0b99ff6bd775f1a44b35795805c001b45e6408351829514
+
+
+o 12.1-BETA3 powerpc64 GENERIC64:
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-bootonly.iso) = 18a3599a6ae60d8e42548df2913981857e87feccec4a3580ab4d68076ff9547d7b2955a2d5c66c58bcd5fe9367617e46292fc3fa34b9171f45559451b12984f3
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-bootonly.iso.xz) = 1f5d973702c814d1249311df80f6ab07f7069bb657876d3dd9bc6269024896ecc47c80f38d5eaaa544f8202d9aa725b070cebe987eccd86e453aad5cba209268
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-disc1.iso) = 9072f5a44a2cbcbc7981cdead05c79bb7147e2ba088e57d190ae3734297ff6ba265137036da71566744f6cdceac6c0d2f058115939e7fec0dc105c0a9d0fab12
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-disc1.iso.xz) = 17f738550a5eb4848dda552eb9a2491b36edbeae666e89ad0f66211108e1372d1845ef38275fb7da141fe939ecfd51d9337de558434b49acbec1b5e8b54fde6d
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-dvd1.iso) = b097f16ca49228088a8de29bde3bbcfe5d2fb07d3a8af4027db85118b215dbbecebf875d283c85db0e852a3e72c89c08bb0b8f6985d82b4b61f07ee20b6a1aa6
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-dvd1.iso.xz) = 4731e4ed5b529f3171eec15e32415af929eeb2d026f6a7f1be463e777be84ce4b3d2c149726ac7a93bc74fee7526798a57980b4d85465ae525496d21321487ae
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-memstick.img) = 8d56a40643c81c65993cf7a2535d6b4bdc5e46d3f24c4f33b82ce183d7169a0369f3d369b209fd74ec7dbdd11cf8dd52b7a40932ecc3962068b18fdde22d44a3
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-memstick.img.xz) = 614bfce766c86ffd6d544ece8cde8879f8ccb331d4162b6486988c04c049e76dec83be7ee316ab7811ee5ea092a9e9a355e9fb1c3f42952ae41fb982e1ab14cd
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-mini-memstick.img) = 2419bf1539caa95b4ee7893f6fdbabbd8c9e815e82cc32fff7eecbc66c4702e4108df55b9eeab23d6f13293e81a815f1dda2d1435607306561b04f131c597430
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpc64-mini-memstick.img.xz) = 9bbaafe83f3abb8b7de58e59dc40e22becfd9b39ce816e3d3b3df26eb5cf532c87d7b3219858e9588eca08aa2f92a6a5a8f5b0c69df4b7aa2d1b4556e4c7217d
+
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-bootonly.iso) = 1c13c4ca190e043c029feb6cc9b0afa5edf6622b92b2253f60470ccb538d1d7e
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-bootonly.iso.xz) = 64146727bc6ded2cc1d1a518210113c14227bfcef51653c6a16132bf2444724a
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-disc1.iso) = 40e08752ad6c0f7b0d51d82d80cec36d84cb54da39a49ea4988140894249521e
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-disc1.iso.xz) = c5db77505d2b8f466be0ecbda617b12f1b0de0fd2b7296f65607a5b2a2c9d124
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-dvd1.iso) = 4996cc4700407f5efa8dbbf3c630e5e31366bb98661fd632c13570ae92c6ac03
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-dvd1.iso.xz) = 5b426b3e7249aa4ba41b2f305ef82bba0eb2b688ed1f09faed3fd05f5c16b9ab
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-memstick.img) = 751a220eb49e3318b7c23bc22e2f80f06e97a830e859c3e626aef3154bf57679
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-memstick.img.xz) = 59b308e67f904bdd97349acccf6339fd136ab1472db9a415b112713be88ef713
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-mini-memstick.img) = 4af15e36c979dddbcec6e3327262046ca672dd499898165a430550a30e6b7175
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpc64-mini-memstick.img.xz) = a16119722c5afad406601c502d6775ada21de094c5ad378f134d2d1227a91184
+
+
+o 12.1-BETA3 powerpcspe MPC85XXSPE:
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-bootonly.iso) = 12eeafbd4a31368f4727d165f04c208be2548b7d58198ef940906de8cefc42766945a03a086cd3dbb3d889bab310a2e64042d5a3a40f3070a38bec7a6f78099d
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-bootonly.iso.xz) = 79d1bd2d963c91f633b0e2b8eee9e8a6417ac4b537fd4e5ab5c1925f50a90789c4bc4add3308f44a8c1e7b120e12acd376df391c4187a8213c4253fb17c418cb
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-disc1.iso) = fb588190748e0ebd44190d27b9bb655cb09cfae823ed3df57f37fbc71a37189e7bbc556461dd7f83ee480d9e6ee276bb4df1db67d4d8a53c7fb3dd5dbbeabcea
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-disc1.iso.xz) = 35550ffc17bba5c1e92c68b849004a54f24920a56f54708ad30ebe75806f8cb596de2ffa474fa1be0fb5a64321fee8ca22587f8e60bff3a751cf74b7e4dbcde5
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-dvd1.iso) = 69f985372278ab6aec4489f9d215b546a864c3f61035ba61159e2149a388785adf1374bd48ccfc00ebb247456ff764493d9b0bf141652919b9c52e5caadb10bf
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-dvd1.iso.xz) = 2c46b077fb29fbb11c476a53e39b1191623241b0a94cc5f59d205584fa021b80398a12a92da46622c8198a36a0b52c960a01a13f2c71a6638790041f0d46e336
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-memstick.img) = 5ed242364e064e6b8d9e9eaa1b3bdcbf55a53f4d48bc67f2a88716ed5fd2ee5451ff5e8a00de49ada2fd89e6502c7af201719bf3728608cf60ccda15655dfd8b
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-memstick.img.xz) = c2104bc0bf2b1b645d868881398e429a22e2cacdccb06e9f7878d6b2ab96ddc09e71b32931657d627ee01db3edb9d914b9d8013b41a842e07aeefcd94ff3fd2a
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-mini-memstick.img) = 257c01d531d95bffada9fce5cd3fdd838ea5f660e8341bdd91ba2518b884ddbad7de5772a4ed11266ddf603e75152f994c54fb5858f94496349c28d4fe1f00b7
+  SHA512 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-mini-memstick.img.xz) = 2c7a19b093abbfbc19579d0c77a1aadbd3af7f958e8da7137bb4fbf69e66c7bbd51601c25bb701e5f1918d5420eb5628d0e49ededc73553cd1fd91d5d31b60bb
+
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-bootonly.iso) = e632e6f80da69be824cfab7d1bcceacfca8e08d4324707c1eea4007e55feaf8e
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-bootonly.iso.xz) = 07d04b38c5bd087f3728040ed6f4a187ea8e0fdd7cb1b3b401400d224458e9fa
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-disc1.iso) = faa0c6a0451b9ac527688a0cab6c5cee5e39324e85a837dbb74bb7c64dc2ed94
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-disc1.iso.xz) = e349496c4efce3fb082cc81749b8e1e78e219ec2150b4d77f3b38cea6dab96bc
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-dvd1.iso) = 6d3199dec39eccca9e1660f6ab5337c0efd716b3224dfd689e5c97b41cebb903
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-dvd1.iso.xz) = 64a7f976973f0cd1d8ba759136365991065ae4c3c5713c1fd72cda59854219bb
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-memstick.img) = 4cf585da2d94c61f917fe1d51f3e6d56f5b6f52494bd178611181d9158ca5ef1
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-memstick.img.xz) = 6d9c71534f90168b0c9e7831432265db7697859cfe4eb969246457ab55b996fc
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-mini-memstick.img) = 57822c24a2cc84848fb96d276373a1397333cbfb956939c92d5ba07e81bfd111
+  SHA256 (FreeBSD-12.1-BETA3-powerpc-powerpcspe-mini-memstick.img.xz) = bdc70aa7762a451baf390105ae29d691fe68f6b76cef17f3eeaac001db1eae16
+
+
+o 12.1-BETA3 sparc64 GENERIC:
+  SHA512 (FreeBSD-12.1-BETA3-sparc64-bootonly.iso) = da3f7703dacef804b445fbd1b51a96b3763ea0b48fc33316ec0688a70c3641afd0fc987cc78d33af5735d26baa5c0f72b2a2d9a848d68aa261c32fb97a0479af
+  SHA512 (FreeBSD-12.1-BETA3-sparc64-bootonly.iso.xz) = 810dd132f5d03d7a125d684365005ba27c25d6279325e40df1d5f635ee207616fca658a6559d0febf15a30f7ae1fd7c58c10061aca76dafc6a9e78e50317fac2
+  SHA512 (FreeBSD-12.1-BETA3-sparc64-disc1.iso) = c22f35132c290266f9340710df04eca3ede310366392a4c1c0ee1f226a9cee5eb2802eedf248f8cf26d6d4f3cad047d8ba635c61baee8dfcfd3d585d9cb6a3c5
+  SHA512 (FreeBSD-12.1-BETA3-sparc64-disc1.iso.xz) = 16bb4a5007e3136c390a276bdf7a44555141cbb710e6831d883a1d28f8f752458d2032817e627631f877a950380c48a06e80e99263d7cef27de23cc1adfeaf0a
+  SHA512 (FreeBSD-12.1-BETA3-sparc64-dvd1.iso) = 5aca1dcc9f813fd38c1a0bb08ec73308788b62eaf3983e514aa3229fb541d9dd574ea3926c35de70c3eb933579c320ee732721f8e864aa5e902b7f5e0aeff713
+  SHA512 (FreeBSD-12.1-BETA3-sparc64-dvd1.iso.xz) = 79b03461dbce9336b02632887d9af6f010ad0bf2054edbbadc4b544b617da595f363b413b4879796f72bd7c29222c466f62e79d605560cc6f9301348f4ac244f
+
+  SHA256 (FreeBSD-12.1-BETA3-sparc64-bootonly.iso) = 3891e4520f3a04349350207ef6f1ccfb6e83350ff088269b7decf7b051f31ad3
+  SHA256 (FreeBSD-12.1-BETA3-sparc64-bootonly.iso.xz) = f308452758fac3115e101ad8d2d318f2cfc5a520525ac9b8ca330e203d1bfa4f
+  SHA256 (FreeBSD-12.1-BETA3-sparc64-disc1.iso) = e850231cf68dbb615f4826a16dd26b7583cd83a1884cd5f3d3d33b7ab7c31891
+  SHA256 (FreeBSD-12.1-BETA3-sparc64-disc1.iso.xz) = 036fdb7ddc7ef90308870e0d0ad269347d88a24baed424c1f7630131edc02fa7
+  SHA256 (FreeBSD-12.1-BETA3-sparc64-dvd1.iso) = 3ff374ce2f40501db65a20bc33e6987bc88ea74f8e163e9109512e31d2697d71
+  SHA256 (FreeBSD-12.1-BETA3-sparc64-dvd1.iso.xz) = 0b2a27e504f28dd18c9c5ee99cd1e3e6648c551cea9f630f716b898207a981db
+
+
+o 12.1-BETA3 armv6 RPI-B:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv6-RPI-B.img.xz) = 63ba7ab6fedad1ec71aaa53bcefa5e8729c9356ab2a0f160632e423ee6eaf6baab5f12474bd09f3c5c227cc80ed0b35d5f7f9dce81cd0b49fbab25748b330687
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv6-RPI-B.img.xz) = 1e02d1475753a0c4aa1e619c4d5e5b3cea458e79d31a0f920868a7a63f312d9c
+
+
+o 12.1-BETA3 armv7 BANANAPI:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-BANANAPI.img.xz) = 3b2b005679fa258ad4b5255ce32768ee93742bf7eaa54f51122b18cf95ef915cad8008b8b782e83f9b55ce66a241b52a2876ad3d72b42beac283ef2589bd911e
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-BANANAPI.img.xz) = 9f85a67a66b3c5a0739d54cbb52c3b244bb7c2ca20834b811fb14b8b89f8bee6
+
+
+o 12.1-BETA3 armv7 BEAGLEBONE:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-BEAGLEBONE.img.xz) = 84ef6e8ca92c4c6d7dc99e2425dbab332809cc782e8c510516c89c0331760f664d485b01a7290a799811f54857894d3bd6ee29090cb329fe3c654b331a0055d8
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-BEAGLEBONE.img.xz) = dd8453de2fa3d0239d4226f2a58bcfa5fd1678a64ee486d32e994c0bbc4d9d48
+
+
+o 12.1-BETA3 armv7 CUBIEBOARD:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-CUBIEBOARD.img.xz) = b77b19bae60f2645c13ba4ad2110fea68c296f9a6ec33fb6b69517767c4f5b3194fff47b5b019777534bc856aefdecabf731c9c6b0c0c7f653cd178b5b24178c
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-CUBIEBOARD.img.xz) = b0ff6be9c8b6dc6aae32cf6cc70581593fd529710c88a0fa24bbcaaffaa234c8
+
+
+o 12.1-BETA3 armv7 CUBIEBOARD2:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-CUBIEBOARD2.img.xz) = cb5e59d1b950f07aeda0e98b7a25b1ca0f92a9ef7e21b8ca8e5c68dadc33d3c2d683afa33bd6b85a8f19c40010a2b0bc576ca0fdc9cc67535528d137ebd8e8e8
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-CUBIEBOARD2.img.xz) = 16a1158a60212d94463dd95e9bb5561ae88fcb6c39724d879ad9d707eb43f2c7
+
+
+o 12.1-BETA3 armv7 CUBOX-HUMMINGBOARD:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-CUBOX-HUMMINGBOARD.img.xz) = 6c5a9ea150626647ea03b2c7f72299466aa47ba17eff307a7cc3bbcc4ff704c2e163cbf2b2e86ef6d4cdb7a7444ffcbdad9af722e49149a928fc7cddedfdb9d7
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-CUBOX-HUMMINGBOARD.img.xz) = 473f05565450e78e92be4ce29f741c51e13b0b38d8c700d96fe1fa3fd1155e00
+
+
+o 12.1-BETA3 armv7 RPI2:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-RPI2.img.xz) = c4ed518217cafb114032c6569bf12925df134378ab4093da8dd8053f934442062bbba5bbc4f6b6d34a8185c42ad0fd2f9efb205962390b1e91cab84415a694fb
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-RPI2.img.xz) = 944f6649e22945362338fefddd8bcea8a23ce893d8b16c95b704398deae4f57b
+
+
+o 12.1-BETA3 armv7 PANDABOARD:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-PANDABOARD.img.xz) = b74a839e389ec2c22c7b43b1ab5cff1d957836009d25326f57be49608f0e4048ab912b474ff921f366fefef3aefca9091af65df7a762c12f71e807b2dcbd02de
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-PANDABOARD.img.xz) = dd2a825aaa1f3ae1b5b2c025f89925222f65358529d9ebfe8248d787c9af888d
+
+
+o 12.1-BETA3 armv7 WANDBOARD:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-WANDBOARD.img.xz) = 1ff0a71e4cd4a84c03ef6cd6b65b2d15ed937f28956f22b9ad5443a69625f01d51aa6afcc7f9b24f521a4c6e8f04016b0a44acc266bac29ef480d7bc70803914
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-WANDBOARD.img.xz) = b255b832e458871e717afa592a8269c4c9fb2454b829ccc5451c8e5ceb362c0a
+
+
+o 12.1-BETA3 armv7 GENERICSD:
+  SHA512 (FreeBSD-12.1-BETA3-arm-armv7-GENERICSD.img.xz) = cc9d907316a0f6ec949f2ac90d92e5a9bfdc6884cb519b83a87d6e29cd8a843ba07a7d64e60e3ca15d8cb616d963125a2fd20d9b0f4a1c21068f8c7d342a1326
+
+  SHA256 (FreeBSD-12.1-BETA3-arm-armv7-GENERICSD.img.xz) = fd32b855275e5d541af0832f63f9f41c9eccc90f89e7d63c939e8a3df4196abe
+
+
+o 12.1-BETA3 aarch64 GENERIC:
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-memstick.img) = 5a04be5c40411a83233b5d473aeb1000999184e3e910b256a916122d762315a878c8178df2907690c6a2de024414ee97946c38da8f4cdf5f6b3a9a1a99b3d2b3
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-memstick.img.xz) = f4d8771bdd47069e79c4e23fd59bab7720540e0cc51efebd922bb67d1d2eb188a0da6a80f96030f4a9b3b8f7bcbd3f25d16113a4351024f4bb94cb8977e0bf29
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-mini-memstick.img) = 5e938ed2e5ca3f33f26e91630fc96229bd7985bda1a9e736ec202ee1235d3df0c078c67694dc0266657d162d596a786fc8e6a5a97ac124daea472c35f93d6e06
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-mini-memstick.img.xz) = cf19e7adf8f5d1f2366579b3905353ef55bfe15c34adbe01ce4bed89f771e7d0b557b4acaa57536362546bfb539572541b83c0145516e9a2f6602a77e63ed225
+
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-memstick.img) = bb22cb94f97d527582f8d4d129f89913a5db099d5e918992d7bf7ba19d5174cd
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-memstick.img.xz) = fdbbc449d78072723b0979e894267f96471ce523b1030b35ce5f89afc69b9505
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-mini-memstick.img) = 446d820e253f18bba5f56379186bb923a48847ff05631223513b46d2d7b0b7ed
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-mini-memstick.img.xz) = 5e3385e29b1734ae0ccd1231bcdbc00aae254a0da06a7f2edf8560a63a663786
+
+
+o 12.1-BETA3 aarch64 RPI3:
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-RPI3.img.xz) = 6fdbff949f88d74bc815d5e58660c729a24bcde5109ee70b7ef39e679f6d6d44c843387ae861dbb1b80e9a8e5582f964b0cb1bae73e06cc9b4f9c752982d0251
+
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-RPI3.img.xz) = 003d8df1060f5115f95897aa41ee380b9f00e2fe0d8822682dc449e100daae35
+
+
+o 12.1-BETA3 aarch64 PINE64:
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-PINE64.img.xz) = e69ab83119ca222b5e5e51ea2efd68363b5f2181fd998e6831634ce2d7983286c022165febd0634dfd27958992e9a8c3fa37d72100d2b49dc32c53c8463af66b
+
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-PINE64.img.xz) = 8442cb648d40db0abfa940f84c66072f0c3aa71e8e4b889cafb7996e9c73078d
+
+
+o 12.1-BETA3 aarch64 PINE64-LTS:
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64-PINE64-LTS.img.xz) = 970aa2819465f8716f715dbd6b1123757a82ae0e062fa6d180ebeeb5623f7698ce8af98ac45e59262881e8434e943030fc04ab259502fa946a9ae5f4a113ce8e
+
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64-PINE64-LTS.img.xz) = 3913c8d7a08089b951dc622643f215d99569919c47f90814967ce1cb01917547
+
+
+== VM IMAGE CHECKSUMS ==
+
+o 12.1-BETA3 amd64:
+  SHA512 (FreeBSD-12.1-BETA3-amd64.qcow2.xz) = 0b4810463baacab3c417ba4a1b17426f3c8c1bdd9b994bb54cf8a82b4c378db9825dd74e17db8731c8a2a87dd5e4d021c71f4b4f8ca7c18eb376b279e1516160
+  SHA512 (FreeBSD-12.1-BETA3-amd64.raw.xz) = 9f4b279f05251449b960ef452d717938c6dac9dda5520b203be1f770259bb9df687b11ffc96067f419bcc0011f9726f9aa57676d6d34ddc522c1a9827569e14a
+  SHA512 (FreeBSD-12.1-BETA3-amd64.vhd.xz) = cdeefc9c962b244b9d81c135c9f4441da1e894d98ae887b588f3b56db8fe40ddaa59675eb5790391e41543eee809dd66ff9a3b44efbe0ab456ccb8db8a1605d0
+  SHA512 (FreeBSD-12.1-BETA3-amd64.vmdk.xz) = f4b0fff2d405e366963f64db13bdad3e2c2243fa107a99ecc2081df8674af651cd35b75303cbb3a0f9aec277587a5ac35c2459deb51fc8ea87d47879ca4c0c98
+
+  SHA256 (FreeBSD-12.1-BETA3-amd64.qcow2.xz) = 34ec582d0c18ec4d0420889b3bdd8ad113c11e74c0de39ecb277e2017a7df379
+  SHA256 (FreeBSD-12.1-BETA3-amd64.raw.xz) = b88b5faec7f028e3bafabf1f41541f44ea9d295dca13dc50ecc7fa88c56f2bd3
+  SHA256 (FreeBSD-12.1-BETA3-amd64.vhd.xz) = 9943c4e5a8efd2c86e56d1c9551f35d71544ca5632df332fa51628716f0bc331
+  SHA256 (FreeBSD-12.1-BETA3-amd64.vmdk.xz) = 456becb5f3e078a8bf9fdaf8880b7dacdd2caeda644767de0f73a2663872c841
+
+
+o 12.1-BETA3 i386:
+  SHA512 (FreeBSD-12.1-BETA3-i386.qcow2.xz) = a3f24b2efdbb53af4b8f5d2e6309bfee694f28ba7dce2fc7bf363df2a6ec67c10c886dea4406cc4fb7f93dd7c3f3dd97bcf21ef455771f7b1fa549cc6f03b8f2
+  SHA512 (FreeBSD-12.1-BETA3-i386.raw.xz) = deec1191e64d7b6ced2129bc8d5ccc5e8e6c721c37559eddbc76504f8b1d7268649cd966ba98f09ba96f361a2e2cc2e7a8f384d900634f0c69caf79e66429e2a
+  SHA512 (FreeBSD-12.1-BETA3-i386.vhd.xz) = 6efa2df596a34e7518bda6c524e0fc96512660125a90bb8b452ea57009e1b5e273a4124dbff6d7f13311997dc764c735b70545b363b70677eb32c60dfee20fb9
+  SHA512 (FreeBSD-12.1-BETA3-i386.vmdk.xz) = 03b853fae009344610e2c3ef77e247b669bd47244fe2440e57925d289184aaa1dcb886eb02e47cd68c2866c0c3bb64bf39e4856333d031a4ec007afda2f51792
+
+  SHA256 (FreeBSD-12.1-BETA3-i386.qcow2.xz) = 3585e7e17aadb87160ba2e093b0ff5869695805ecad1e26281ab9888ab91f5a3
+  SHA256 (FreeBSD-12.1-BETA3-i386.raw.xz) = 5406e6b510a76ebd71bca47eccfae68be05368b6f24a9548837c3cc32f6a6cfc
+  SHA256 (FreeBSD-12.1-BETA3-i386.vhd.xz) = 3b9a771fbcdb637ffa7c233a148099c231e6ca5bb5618b1839cc73b1ec93ec13
+  SHA256 (FreeBSD-12.1-BETA3-i386.vmdk.xz) = 071c3bb7f73f2f2cb0c39b7a09bbab0f7409da0c4c1e87535ac6cb8f2373e98a
+
+
+o 12.1-BETA3 aarch64:
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64.qcow2.xz) = 08ae23f7cb18084de7bc0b93e5d5ef70896100732508a86b07bfaeb2bb05691dbda2f9f18dccce34e5fd8539423070ef9c2bef87594486b52d73a160c144127a
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64.raw.xz) = de834cf1bcc9e85e524008274edb28e46014423940cb004a206980f48216973c5f3d7e254c11f990e9921774974bcf421e5131806071dbab6795e42b2ce1676c
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64.vhd.xz) = 2a120dfee1d5a0906f7132a99c994c213690a85432d543a45015e4256041d67db4fee2df1c5bea918776077a01f5d5bc815a960f8c8ef0f520bd25aca49eff3a
+  SHA512 (FreeBSD-12.1-BETA3-arm64-aarch64.vmdk.xz) = 2ad95b1332d5e593cd3faf32c15c8da9a3b43b62416db6e9045babb53943d96c72225fb1a808d0b7dc32e536768ea09d43340ef6069998355294a4fd312ebdb0
+
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64.qcow2.xz) = 1be7959f2b443615e20ab315949188821f63cbf9ce3b319e2e65cb06ba818c87
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64.raw.xz) = dd78843d1954e17d16bfd1a72e5427c7c3381dd97d611891c19e502862460124
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64.vhd.xz) = 2741b008834552e18349d06f0eff047cd9e8a947a0f702ea589b18dbce977904
+  SHA256 (FreeBSD-12.1-BETA3-arm64-aarch64.vmdk.xz) = e2d00062ce8dbe2b4488cca49000ee890b0a14251387a120c91ab15a56b6ed2c
+
+Regards,
+
+Glen
+
+Brought to you by Rubicon Communications, LLC (Netgate).
+
+Love FreeBSD?  Support this and future releases with a donation to
+the FreeBSD Foundation!  https://www.freebsdfoundation.org/donate/
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEjRJAPC5sqwhs9k2jAxRYpUeP4pMFAl2XtDMACgkQAxRYpUeP
+4pOmqA/9GOYW7P/GO4zdWdSoSTO11BE1KKfND1/nXK5rwU1b5Xe243IEckT68jcJ
+xk9urwlJtsr7ME1DbokrU6/zouWIzzhbqzixzB5PdlgrmqBIDGr6dArJEWrG5Slv
+mxi2Nu2v/iC1X0VX5ZUD5+5sgk4nHRPn42VxwwlV431BTANoM5r0BiODbGtlIHAj
+4Ou0+8h6aQaUiq8aKsfdvfumCyo+jH6hgrowNAYNsdM8AkG0AtzFk1xj5ZHUx9q6
+L+qGOhj21TIM82K/gnt4Oy104Z0IfHpmg/TheeAFjrovuI2bhG79IWW49Z8sb5SN
+eEwQbMiVM/DgCbLyE2X5105CRkRxG5xhR1vVQ/o7Y3F/suYvyZ9FR2AONob7HXqv
+SkBPuWrDFD0E/tJUcRsT1xCl7e7JOFFWHS/IuFBjwGEfuP2rmISehNj9LrBMiRch
+7rH2qDDlUv+PjTBLWx/Ezq5c/qmfynGi9EAeRDDBN4QWNvnnpQIMLU8y9jVd5IkN
+QZTHk8Hh6OS2E6vLhbZCGTUki3Tl9yJ2GPh7JfZqQrRXZKe3rfjNNdQrZQZ9wKwN
+eJ8i0IOzlDbyv03UjaxxZSR4Tg73mXJYF3n+220VFnMJ5hL7uG0mTn4IOB4QnelP
+LqM8IpccXCaKBJAA3qHO21JMra3XFJnGgMJQpb58MX56WJcANlg=
+=ZBTs
+-----END PGP SIGNATURE-----
+_______________________________________________
+freebsd-snapshots@freebsd.org mailing list
+https://lists.freebsd.org/mailman/listinfo/freebsd-snapshots
+To unsubscribe, send any mail to "freebsd-snapshots-unsubscribe@freebsd.org"
+

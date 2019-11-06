@@ -40,11 +40,13 @@ tolower($1) == "message-id:" {
 	sub(">.*", "", MID)
 }
 
-$0 == "== ISO CHECKSUMS ==" {
+$0 == "== ISO CHECKSUMS ==" ||
+$0 == "ISO Image Checksums" {
 	type = "iso"
 }
 
-$0 == "== VM IMAGE CHECKSUMS ==" {
+$0 == "== VM IMAGE CHECKSUMS ==" ||
+$0 == "Virtual Machine Disk Image Checksums" {
 	type = "vm"
 }
 
@@ -56,12 +58,21 @@ function isdate(date) {
 	return 0
 }
 
+function isrelease(relpart) {
+	if (index(relpart, "BETA") == 1 || index(relpart, "RC") == 1 ||
+	    index(relpart, "RELEASE") == 1)
+		return 1
+
+	return 0
+}
+
 #FreeBSD-13.0-CURRENT-powerpc-powerpcspe-20181026-r339752-bootonly.iso
 #FreeBSD-13.0-CURRENT-sparc64-20181026-r339752-bootonly.iso.asc
 #FreeBSD-13.0-CURRENT-arm64-aarch64-PINE64-LTS-20181026-r339752.img.xz
 #FreeBSD-13.0-CURRENT-i386-20181026-r339752.vmdk.xz
 #FreeBSD-12.1-BETA3-amd64-mini-memstick.img.xz
 #FreeBSD-12.1-RC1-amd64-mini-memstick.img.xz
+#FreeBSD-12.1-RELEASE-arm64-aarch64.vmdk.xz
 
 $1 == "SHA512" {
 	# Strip parens
@@ -91,7 +102,7 @@ $1 == "SHA512" {
 	}
 
 	# find date, may be platform first
-	if (index(parts[3], "BETA") == 1 || index(parts[3], "RC") == 1) {
+	if (isrelease(parts[3])) {
 		if (nextidx > cnt) {
 			# FreeBSD-12.1-BETA3-i386.vhd.xz
 			platform = "xxx"
@@ -135,7 +146,7 @@ $1 == "SHA512" {
 			sep="-"
 		}
 	}
-	if (index(parts[3], "BETA") == 1 || index(parts[3], "RC") == 1) {
+	if (isrelease(parts[3])) {
 		if (type == "vm") {
 			vers = dotparts[3]
 			url = relvmroot parts[2] "-" parts[3] "/" basearch "/Latest/" fname
@@ -152,7 +163,7 @@ $1 == "SHA512" {
 	# if this part doesn't begin w/ r (for svn rev), skip it, we can't parse
 	# others for now
 	rev = parts[nextidx]
-	if (index(parts[3], "BETA") == 1 || index(parts[3], "RC") == 1) {
+	if (isrelease(parts[3])) {
 		# FreeBSD-12.1-RC1-amd64-mini-memstick.img.xz
 		rev = "unspec"
 	} else if (substr(rev, 1, 1) != "r") {
